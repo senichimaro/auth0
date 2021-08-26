@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Auth0 kata
+We will add a basic user login with authentication to a React.js app using Auth0. Auth0 with their npm package `@auth0/auth0-react`, which uses React context and hooks.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Steps
+1. In Auth0
+  1. create application > react
+  2. settings
+    - Allowed Callback URLs : After user authenticates Auth0 callback to any of these URLs.
+    - Allowed Logout URLs : valid URLs to redirect after logout from Auth0.
+    - Allowed Web Origins : allowed origins for use with Cross-Origin Authentication
 
-### `npm start`
+2. App config
+  1. Create Provider
+    3. .env variables from Auth0
+      - domain: dev-72bpne5u.us.auth0.com
+      - clientID: jWgfFWAGQ2UTRPfqKymmmutDdSdg3OFB
+    4. Import Auth0Provider App Wrapper
+      - domain
+      - clientID
+      - redirectUri
+  5. import Auth0 hook useAuth0
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. In Auth0
+  1. settings
+    - Allowed Callback URLs : After user authenticates Auth0 callback to any of these URLs.
+    - Allowed Logout URLs : valid URLs to redirect after logout from Auth0.
+    - Allowed Web Origins : allowed origins for use with Cross-Origin Authentication
 
-### `npm test`
+2. App config
+  1. .env domain & clientID variables
+  2. Create Provider Component src/auth/Auth0ProviderWithHistory.js
+  3. wrapp the app with Router & Provider
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Login/Logout Logic
+  1. Provider: parent that allow setup configs
+  2. ProtectedRoute: wrapper that restrict route access
+  3. Login/Logout Hook: buttons triggering Auth0 Hook
 
-### `npm run build`
+4. User data
+  1. get it from Auth0 Hook
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Packages
+* dotenv
+* @auth0/auth0-react
+* react-router-dom
+* @material-ui/core
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+//
